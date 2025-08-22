@@ -14,7 +14,7 @@ depends=('cage' 'kitty' 'greetd' 'greetd-tuigreet')
 
 # Source files: our configuration files, bundled into a tarball
 source=("$pkgname-$pkgver.tar.gz")
-sha256sums=('7134496d18949fda356b411eaca6fc61467aa324c5d34f86dde3d0450d5bceca')
+sha256sums=('1cb3497376848f77f682b223d0dafba4716a48eec5c6edb40cfaf47f40f0b4d7')
 
 # This function is the "installer".
 package() {

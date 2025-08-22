@@ -1,0 +1,2 @@
+#!/bin/sh
+exec cage -s -- kitty --config /opt/intentional/etc/kitty/kitty-cage.conf
