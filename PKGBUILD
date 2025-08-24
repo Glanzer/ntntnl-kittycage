@@ -24,7 +24,7 @@ package() {
   local NTNTNL_ROOT="/opt/ntntnl"
 
   # --- STEP 1: Install all package files into our private /opt/ntntnl root ---
-  cd "$srcdir/source"
+  cd "$srcdir"
 
   install -d "$pkgdir$NTNTNL_ROOT/etc/greetd"
   install -m644 etc/greetd/config.toml "$pkgdir$NTNTNL_ROOT/etc/greetd/"
@@ -45,9 +45,12 @@ package() {
   install -d "$pkgdir$NTNTNL_ROOT/share/doc"
   install -m644 share/doc/README.md "$pkgdir$NTNTNL_ROOT/share/doc/"
 
-  install -Dm644 etc/systemd/system/getty@.service.d/override.conf "$pkgdir/etc/systemd/system/getty@.service.d/override.conf"
+  install -Dm644 etc/systemd/system/getty\@.service.d/override.conf "$pkgdir/etc/systemd/system/getty\@.service.d/override.conf"
 
   # --- STEP 2: Integrate with the system safely ---
+
+  install -d "$pkgdir/etc/systemd/system/getty\@.service.d"
+  ln -sfn "$NTNTNL_ROOT/etc/systemd/system/getty\@.service.d/override.conf" "$pkgdir/etc/systemd/system/getty\@.service.d/override.conf"
 
   install -Dm644 etc/greetd/config.toml "$pkgdir/etc/greetd/config.toml.pacnew"
 
