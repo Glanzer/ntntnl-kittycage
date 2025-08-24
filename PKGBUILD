@@ -2,8 +2,8 @@
 
 # Package metadata
 pkgname='ntntnl-kittycage'
-pkgver='0.1.0'
-pkgrel=2
+pkgver='0.1.1'
+pkgrel=1
 pkgdesc='The core cage+kitty login environment for the ntntnl-rice ecosystem.'
 arch=('any')
 license=('GPL')
@@ -14,7 +14,7 @@ depends=('cage' 'kitty' 'greetd' 'greetd-tuigreet')
 source=("$pkgname-$pkgver.tar.gz::$url/releases/download/v$pkgver/$pkgname-$pkgver.tar.gz", 'ntntnl-kittycage.install')
 
 # Generate this with the updpkgsums command
-sha256sums=('1c00c330dc6fc3f6edc8207c83ddec4c5ec9684a002ac420a60220b86505aa39'
+sha256sums=('452feef3e13f4e4fa36e3d34903a24b4e09c8c9ff58a061c8c87df73a8362538'
             '18dfcb9bfd4f45725e99a97dc56d4b9f5a6016162c7a0a2830b386e9023a0991')
 
 # This function is the "installer".
