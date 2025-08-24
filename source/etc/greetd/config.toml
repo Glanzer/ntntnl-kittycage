@@ -1,7 +1,8 @@
 [terminal]
 # The VT to run the greeter on. Can be "next", "current" or a number
 # designating the VT.
-vt = "current"
+#vt = "current"
+vt = "%I"
 
 # The default session, also known as the greeter.
 [default_session]
@@ -9,11 +10,12 @@ vt = "current"
 
 # `agreety` is the bundled agetty/login-lookalike. You can replace `/bin/sh`
 # with whatever you want started, such as `sway`.
-command = "tuigreet --cmd /opt/ntntnl/libexec/intentional-session"
+command = "tuigreet --cmd /opt/ntntnl/libexec/intentional-greeter"
 
 
 # The user to run the command as. The privileges this user must have depends
 # on the greeter. A graphical greeter may for example require the user to be
 # in the `video` group.
-#[initial_session]
-#user = "greeter"
+[initial_session]
+command = "/opt/ntntnl/libexec/intentional-greeter"
+user = "user"

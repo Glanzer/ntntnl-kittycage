@@ -45,10 +45,14 @@ package() {
   install -d "$pkgdir$NTNTNL_ROOT/share/doc"
   install -m644 share/doc/README.md "$pkgdir$NTNTNL_ROOT/share/doc/"
 
+  install -Dm644 etc/systemd/system/getty@.service.d/override.conf "$pkgdir/etc/systemd/system/getty@.service.d/override.conf"
 
   # --- STEP 2: Integrate with the system safely ---
 
   install -Dm644 etc/greetd/config.toml "$pkgdir/etc/greetd/config.toml.pacnew"
+
+  install -d "$pkgdir/etc/profile.d"
+  ln -sfn "$NTNTNL_ROOT/etc/profile.d/intentional.sh" "$pkgdir/etc/profile.d/intentional.sh"
 
   # Link files that are UNIQUE
   install -d "$pkgdir/usr/share/wayland-sessions"
