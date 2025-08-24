@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Home Base
+Comment=it' s a cage session.
+Exec=/opt/intentional/libexec/intentional-session
+Type=Application
