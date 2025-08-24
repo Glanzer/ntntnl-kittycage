@@ -14,7 +14,7 @@ depends=('cage' 'kitty' 'greetd' 'greetd-tuigreet')
 source=("$pkgname-$pkgver.tar.gz::$url/releases/download/v$pkgver/$pkgname-$pkgver.tar.gz", 'ntntnl-kittycage.install')
 
 # Generate this with the updpkgsums command
-sha256sums=('4a7c665fdfa87f31542330be0da826e39634ac4dab0474023572e310612e6b79'
+sha256sums=('a13675a5055d958227a1961b6c45775d73de48264e5a1a7732bef468fbaf2645'
             '18dfcb9bfd4f45725e99a97dc56d4b9f5a6016162c7a0a2830b386e9023a0991')
 
 # This function is the "installer".
