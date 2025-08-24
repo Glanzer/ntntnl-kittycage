@@ -1,4 +1,4 @@
-# PKGBUILD for ntntnl-kittycage
+# PKGBUILD for ntntnl-kittycye
 
 # Package metadata
 pkgname='ntntnl-kittycage'
@@ -7,21 +7,23 @@ pkgrel=1
 pkgdesc='The core cage+kitty login environment for the ntntnl-rice ecosystem.'
 arch=('any')
 license=('GPL')
-url='https://github.com/your-repo' # Replace with your repo later
+url='https://github.com/Glanzer/ntntnl-kittycage'
 depends=('cage' 'kitty' 'greetd' 'greetd-tuigreet')
 
-# Source files: configuration files, bundled into a tarball
-#source=("$pkgname-$pkgver.tar.gz")
-source=("source")
-sha256sums=('1cb3497376848f77f682b223d0dafba4716a48eec5c6edb40cfaf47f40f0b4d7')
+# Point ONLY to the source tarball on your GitHub release page
+source=("$pkgname-$pkgver.tar.gz::$url/releases/download/v$pkgver/$pkgname-$pkgver.tar.gz")
+
+# Generate this with the updpkgsums command
+sha256sums=('YOUR_SHA256SUM_HERE')
 
 # This function is the "installer".
 package() {
+  # ... (no changes needed in this function) ...
   # Define the installation root for our entire ecosystem
   local NTNTNL_ROOT="/opt/ntntnl"
 
   # --- STEP 1: Install all package files into our private /opt/ntntnl root ---
-  cd "$srcdir"
+  cd "$srcdir/source"
 
   install -d "$pkgdir$NTNTNL_ROOT/etc/greetd"
   install -m644 etc/greetd/config.toml "$pkgdir$NTNTNL_ROOT/etc/greetd/"
@@ -45,7 +47,7 @@ package() {
 
   # --- STEP 2: Integrate with the system safely ---
 
-  install -Dm644 "$srcdir/etc/greetd/config.toml" "$pkgdir/etc/greetd/config.toml.pacnew"
+  install -Dm644 etc/greetd/config.toml "$pkgdir/etc/greetd/config.toml.pacnew"
 
   # Link files that are UNIQUE
   install -d "$pkgdir/usr/share/wayland-sessions"
