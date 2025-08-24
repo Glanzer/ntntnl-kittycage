@@ -9,7 +9,7 @@ vt = "current"
 
 # `agreety` is the bundled agetty/login-lookalike. You can replace `/bin/sh`
 # with whatever you want started, such as `sway`.
-command = "tuigreet --cmd /opt/intentional/libexec/intentional-session"
+command = "tuigreet --cmd /opt/ntntnl/libexec/intentional-session"
 
 
 # The user to run the command as. The privileges this user must have depends
