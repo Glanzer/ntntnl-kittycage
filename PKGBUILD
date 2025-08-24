@@ -14,7 +14,7 @@ depends=('cage' 'kitty' 'greetd' 'greetd-tuigreet')
 source=("$pkgname-$pkgver.tar.gz::$url/releases/download/v$pkgver/$pkgname-$pkgver.tar.gz")
 
 # Generate this with the updpkgsums command
-sha256sums=('YOUR_SHA256SUM_HERE')
+sha256sums=('1c00c330dc6fc3f6edc8207c83ddec4c5ec9684a002ac420a60220b86505aa39')
 
 # This function is the "installer".
 package() {
