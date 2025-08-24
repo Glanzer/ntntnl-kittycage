@@ -8,12 +8,11 @@ pkgdesc='The core cage+kitty login environment for the ntntnl-rice ecosystem.'
 arch=('any')
 license=('GPL')
 url='https://github.com/your-repo' # Replace with your repo later
-
-# Dependencies: what pacman needs to install before this package
 depends=('cage' 'kitty' 'greetd' 'greetd-tuigreet')
 
-# Source files: our configuration files, bundled into a tarball
-source=("$pkgname-$pkgver.tar.gz")
+# Source files: configuration files, bundled into a tarball
+#source=("$pkgname-$pkgver.tar.gz")
+source=("source")
 sha256sums=('1cb3497376848f77f682b223d0dafba4716a48eec5c6edb40cfaf47f40f0b4d7')
 
 # This function is the "installer".
@@ -48,7 +47,7 @@ package() {
 
   install -Dm644 "$srcdir/etc/greetd/config.toml" "$pkgdir/etc/greetd/config.toml.pacnew"
 
-  # Link files that are UNIQUE to our package (no conflicts here)
+  # Link files that are UNIQUE
   install -d "$pkgdir/usr/share/wayland-sessions"
   ln -sfn "$NTNTNL_ROOT/share/applications/homebase.desktop" "$pkgdir/usr/share/wayland-sessions/homebase.desktop"
 }
