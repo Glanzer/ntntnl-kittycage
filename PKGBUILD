@@ -3,7 +3,7 @@
 # Package metadata
 pkgname='ntntnl-kittycage'
 pkgver='0.1.0'
-pkgrel=1
+pkgrel=2
 pkgdesc='The core cage+kitty login environment for the ntntnl-rice ecosystem.'
 arch=('any')
 license=('GPL')
@@ -11,10 +11,11 @@ url='https://github.com/Glanzer/ntntnl-kittycage'
 depends=('cage' 'kitty' 'greetd' 'greetd-tuigreet')
 
 # Point ONLY to the source tarball on your GitHub release page
-source=("$pkgname-$pkgver.tar.gz::$url/releases/download/v$pkgver/$pkgname-$pkgver.tar.gz")
+source=("$pkgname-$pkgver.tar.gz::$url/releases/download/v$pkgver/$pkgname-$pkgver.tar.gz", 'ntntnl-kittycage.install')
 
 # Generate this with the updpkgsums command
-sha256sums=('1c00c330dc6fc3f6edc8207c83ddec4c5ec9684a002ac420a60220b86505aa39')
+sha256sums=('1c00c330dc6fc3f6edc8207c83ddec4c5ec9684a002ac420a60220b86505aa39'
+            '18dfcb9bfd4f45725e99a97dc56d4b9f5a6016162c7a0a2830b386e9023a0991')
 
 # This function is the "installer".
 package() {

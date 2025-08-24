@@ -1,0 +1,16 @@
+# This script runs before the package is installed or upgraded.
+pre_install() {
+  # Define the path to the potentially conflicting file
+  local conflict_path="/etc/greetd/config.toml"
+
+  # Check if the file exists AND is a symbolic link
+  if [ -L "$conflict_path" ]; then
+    echo "==> Found old symlink at $conflict_path. Removing it..."
+    rm "$conflict_path"
+  fi
+}
+
+# The pre_upgrade function should do the same thing
+pre_upgrade() {
+  pre_install
+}
